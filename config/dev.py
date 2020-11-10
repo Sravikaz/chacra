@@ -4,8 +4,8 @@ from chacra import models
 
 # Server Specific Configurations
 server = {
-    'port': '8080',
-    'host': '0.0.0.0'
+    'port': '8083',
+    'host': '172.18.232.2'
 }
 
 # Pecan Application Configurations
@@ -56,7 +56,7 @@ logging = {
 }
 
 sqlalchemy = {
-    'url': 'sqlite:///dev.db',
+    'url': 'postgresql+psycopg2://chacra:pass4root@127.0.0.1/chacra',
     'echo':          True,
     'echo_pool':     True,
     'pool_recycle':  3600,
@@ -94,7 +94,7 @@ distributions = {
         "Contents": ".gz .bz2",
         "Origin": "RedHat",
         "Description": "",
-        "Architectures": "amd64 armhf i386 source",
+        "Architectures": "s390x source",
         "Suite": "stable",
         "Components": "main",
         "DDebComponents": "main",

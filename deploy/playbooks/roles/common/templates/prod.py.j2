@@ -9,8 +9,8 @@ from prod_callbacks import callback_url, callback_user, callback_key, health_pin
 
 # Server Specific Configurations
 server = {
-    'port': '8000',
-    'host': '0.0.0.0'
+    'port': '8083',
+    'host': '172.18.232.2'
 }
 
 # Pecan Application Configurations
@@ -239,7 +239,7 @@ quiet_time = 20
 
 repos = {
     'ceph': {
-        'automatic': False,
+        'automatic': True,
         # ceph-deploy production builds should go into the "ref" master
         # because otherwise we would be forced to list every "vN.N.N" ref
         # here to avoid getting cruft like "test" builds
@@ -313,7 +313,7 @@ distributions = {
         "Contents": ".gz .bz2",
         "Origin": "ceph.com",
         "Description": "",
-        "Architectures": "amd64 arm64 armhf i386 source",
+        "Architectures": "s390x source",
         "Suite": "stable",
         "Components": "main",
         "DDebComponents": "main",

@@ -30,6 +30,12 @@
   notify:
      - reload systemd
 
+- name: install the systemd unit file for celeryworker
+  template: src=systemd/chacra-celeryworker.service.j2 dest=/etc/systemd/system/chacra-celeryworker.service
+  become: true
+  notify:
+     - reload systemd
+
 - name: ensure chacra is enabled and running
   become: true
   service: name=chacra state=restarted enabled=yes
@@ -41,3 +47,7 @@
 - name: ensure chacra-celerybeat is enabled and running
   become: true
   service: name=chacra-celerybeat state=restarted enabled=yes
+
+- name: ensure chacra-celeryworker is enabled and running
+  become: true
+  service: name=chacra-celeryworker state=restarted enabled=yes

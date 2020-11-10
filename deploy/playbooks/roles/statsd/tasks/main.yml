@@ -7,7 +7,7 @@
   # executable
   with_items:
     - git
-    - nodejs-legacy
+    #- nodejs-legacy
   when: ansible_pkg_mgr == 'apt'
 
 - name: Create node user

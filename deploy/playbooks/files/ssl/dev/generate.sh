@@ -17,7 +17,7 @@ if [ ! -z $1 ]
 then
     domain=$1
 else
-    domain="node.a"
+    domain="lnxne.boe"
 fi
 
 template="[req]

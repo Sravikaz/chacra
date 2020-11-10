@@ -1,0 +1,17 @@
+# Ansible managed
+[Unit]
+Description=chacra celeryworker service
+After=network.target rabbitmq-server.service
+Requires=rabbitmq-server.service
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/chacra
+User=root
+WorkingDirectory=/opt/chacra/src/chacra/chacra
+StandardOutput=journal
+StandardError=journal
+#ExecStart=/opt/chacra/bin/celery -A async worker -B
+ExecStart=/opt/chacra/bin/celery worker --app=chacra.async --loglevel=info
+[Install]
+WantedBy=multi-user.target
